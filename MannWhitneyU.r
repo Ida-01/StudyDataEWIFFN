@@ -81,5 +81,5 @@ for (i in 1:5)
 rownames(Pvals) <- c("He ", "Nox", "Plu", "Ser", "Xav")
 colnames(Pvals) <- c("    | He   ", "Nox  ", "Plu  ", "Ser  ", "Xav  ")
 print(Pvals)
-write.table(Pvals, file =paste("Tables/", NameVal,".txt", sep = ""), sep = "|")
+write.table(Pvals, file =paste("Tables-US1990/", NameVal,".txt", sep = ""), sep = "|")
 

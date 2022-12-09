@@ -1,0 +1,1 @@
+{"Neurons": [2, 23, 23, 67], "Activtions": "[Tanh, Tanh, Tanh]", "CostFunction": "CalcCost", "Pooling": 0, "Chunk": 0, "LoadingBar": "LoadingBarPre", "Filters": "[]", "FiltFun": "[]"}
