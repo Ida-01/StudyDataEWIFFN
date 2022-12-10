@@ -1,23 +1,23 @@
 
 NameVal = "Tanh"
 
-Plu_data <- read.delim(paste("Plu/ErrorAvrage", NameVal," copy.txt", sep = ""), header = FALSE)
+Plu_data <- read.delim(paste("Plu-US1990/ErrorAvrage", NameVal," copy.txt", sep = ""), header = FALSE)
 Plu_Avg = list()
 
 
-He_data <- read.delim(paste("He/ErrorAvrage", NameVal," copy.txt", sep = ""), header = FALSE)
+He_data <- read.delim(paste("He-US1990/ErrorAvrage", NameVal," copy.txt", sep = ""), header = FALSE)
 He_Avg = list()
 
 
-Nox_data <- read.delim(paste("Nox/ErrorAvrage", NameVal," copy.txt", sep = ""), header = FALSE)
+Nox_data <- read.delim(paste("Nox-US1990/ErrorAvrage", NameVal," copy.txt", sep = ""), header = FALSE)
 Nox_Avg = list()
 
 
-Ser_data <- read.delim(paste("Ser/ErrorAvrage", NameVal, " copy.txt", sep = ""), header = FALSE)
+Ser_data <- read.delim(paste("Ser-US1990/ErrorAvrage", NameVal, " copy.txt", sep = ""), header = FALSE)
 Ser_Avg = list()
 
 
-Xav_data <- read.delim(paste("Xav/ErrorAvrage",NameVal," copy.txt", sep = ""), header = FALSE)
+Xav_data <- read.delim(paste("Xav-US1990/ErrorAvrage",NameVal," copy.txt", sep = ""), header = FALSE)
 Xav_Avg = list()
 
 for (i in 1:20)
@@ -44,7 +44,7 @@ Plu_Avg = as.numeric(Plu_Avg)
 DataLis = c(He_Avg, Nox_Avg ,Plu_Avg, Ser_Avg, Xav_Avg)
 
 
-Pvals = matrix(c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), nrow = 5)
+Pvals = matrix(c(10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10), nrow = 5)
 
 
 for (i in 1:5)
@@ -68,7 +68,7 @@ for (i in 1:5)
 		walmart = DataLis[g:h]
 		print(i)
 		print(j)
-		MannU = wilcox.test(walmart, hhhgreg, alternative = "two.sided", paired = FALSE, exact = FALSE, correct = TRUE)
+		MannU = wilcox.test(walmart, hhhgreg, alternative = "two.sided", paired = FALSE, exact = TRUE, correct = TRUE)
 		CurrPval = signif(round(as.double(MannU[3]),3), 3)
 		if(CurrPval == 0)
 		{
